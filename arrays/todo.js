@@ -8,8 +8,9 @@ const todos = [
 
 console.log(todos.length)
 console.log(`You have ${todos.length} todos`)
-todos.forEach(function (item, index) {
-  console.log(`${index + 1}: ${item}`)
+
+todos.forEach(function (todo, index) {
+  console.log(`${index + 1}: ${todo}`)
 })
 
 // let first = todos[0]
