@@ -9,9 +9,15 @@ const todos = [
 console.log(todos.length)
 console.log(`You have ${todos.length} todos`)
 
+// ForEach
 todos.forEach(function (todo, index) {
   console.log(`${index + 1}: ${todo}`)
 })
+
+// For Loop
+for (let i = 0; i < todos.length; i++) {
+   console.log(`${i + 1}: ${todos[i]}`)
+}
 
 // let first = todos[0]
 // let secondToLast = todos[todos.length - 2]

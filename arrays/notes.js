@@ -25,3 +25,14 @@ notes.forEach(function (item, index) {
 console.log(notes.length)
 // Got invidual string using bracket notation notes[0]
 console.log(notes)
+
+
+
+for (let count = 0; count <= 2; count++) {
+  console.log(count)
+}
+
+// Starteing from tend and looping thorugh
+for (let i = notes.length - 1; i >= 0; i--) {
+  console.log(notes[i])
+}
