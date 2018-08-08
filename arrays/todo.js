@@ -22,7 +22,15 @@ const todos = [
 
  deleteTodo(todos, 'get a car')
 
+ const getThingsTodo = function (todos, query) {
+  return todos.filter(function (todo) {
+    return !todo.completed
+  })
+}
+console.log(getThingsTodo(todos))
 
+
+ /* LONG WAY below and short way above ^^^
  const getThingsTodo = function (todos, query) {
   return todos.filter(function (todo, index) {
     const textMatch = todo.text.toLowerCase().includes(query.toLowerCase())
@@ -31,6 +39,8 @@ const todos = [
   })
 }
 console.log(getThingsTodo(todos, ''))
+
+*/
 
 
 
