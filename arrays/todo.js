@@ -1,23 +1,71 @@
 const todos = [
-  'Finish Lambda',
-  'Search for a job',
-  'Get a job',
-  'Move into an apartment',
-  'Get a car'
+  {text: 'Finish Lambda',
+  completed: false,},
+  {text: 'Search for a job',
+  completed: true,},
+  {text: 'Get a job',
+  completed: true,},
+  {text: 'Move into an apartment',
+  completed: false,},
+  {text:'Get a car',
+  completed: false,}
 ]
 
-console.log(todos.length)
-console.log(`You have ${todos.length} todos`)
+ const deleteTodo = function (todos, todoText) {
+   const index = todos.findIndex(function (todo) {
+     return todo.text.toLowerCase() === todoText.toLowerCase()
+   })
+   if (index > -1) {
+     todos.splice(index, 1)
+   }
+ }
 
-// ForEach
-todos.forEach(function (todo, index) {
-  console.log(`${index + 1}: ${todo}`)
-})
+ deleteTodo(todos, 'get a car')
 
-// For Loop
-for (let i = 0; i < todos.length; i++) {
-   console.log(`${i + 1}: ${todos[i]}`)
+
+ const getThingsTodo = function (todos, query) {
+  return todos.filter(function (todo, index) {
+    const textMatch = todo.text.toLowerCase().includes(query.toLowerCase())
+    const notCompleted = todo.completed === false
+    return textMatch && notCompleted
+  })
 }
+console.log(getThingsTodo(todos, ''))
+
+
+
+
+  /* first argument is the "todos" to look through and 2nd is the text: we wanna compare
+ const deleteTodo = function (todos, todoText) {
+ ** This gives us the index of what we searched for for example 'get a car' was 4 **
+   const index = todos.findIndex(function (todo) {
+     return todo.text.toLowerCase() === todoText.toLowerCase()
+   })
+ ** This makes the code only work if it exist at all so anything greater than -1 then splice() deletes it when we call it through deleteTodo(todos, 'get a car') **
+   if (index > -1) {
+     todos.splice(index, 1)
+   }
+ }
+ */
+
+//  const deletedTodo = deleteTodo(todos, 'get a car')
+// console.log(deletedTodo)
+
+//  todos.splice(4,1)
+
+
+// console.log(todos.length)
+// console.log(`You have ${todos.length} todos`)
+
+// // ForEach
+// todos.forEach(function (todo, index) {
+//   console.log(`${index + 1}: ${todo}`)
+// })
+
+// // For Loop
+// for (let i = 0; i < todos.length; i++) {
+//    console.log(`${i + 1}: ${todos[i]}`)
+// }
 
 // let first = todos[0]
 // let secondToLast = todos[todos.length - 2]
@@ -30,9 +78,8 @@ for (let i = 0; i < todos.length; i++) {
 // console.log(whatYouHaveTodo2)
 
 
-todos.splice(2,1)
-todos.push('Go on vacation')
-todos.shift()
-console.log(todos)
-
+// todos.splice(2,1)
+// todos.push('Go on vacation')
+// todos.shift()
+// console.log(todos)
 
