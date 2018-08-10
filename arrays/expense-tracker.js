@@ -28,11 +28,12 @@ const account = {
 }
 
 // account.addExpense('Down Payment', 1500)
-account.addExpense('Internet', 70)
+account.addExpense('Internet', 120)
+account.addExpense('Bills', 500)
 account.addExpense('Valet Trash', 40)
 account.addExpense('Rent', 1500)
 account.addExpense('Insurance', 500)
-account.addIncome('Google', 4000)
+account.addIncome('Google', 3000)
 
 console.log(account.getAccountSummary())
 
