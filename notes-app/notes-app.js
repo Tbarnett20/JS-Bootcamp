@@ -14,6 +14,16 @@ const notes = [{
 const filters = {
   searchText: ''
 }
+// Create
+// localStorage.setItem('location', 'Morehead')
+
+// // Read
+// console.log(localStorage.getItem('location'))
+
+// // Delete
+// localStorage.removeItem('location')
+
+localStorage.clear()
 
 const renderNotes = function (notes, filters) {
     const filteredNotes = notes.filter(function (note) {
@@ -35,50 +45,11 @@ document.querySelector('#create-note').addEventListener('click', function (e) {
   e.target.textContent = "Button was clicked"
 })
 
-// document.querySelector('#remove-all').addEventListener('click', function (e) {
-//   document.querySelectorAll('.note').forEach(function (note) {
-//     note.remove()
-//   })
-// })
-
 document.querySelector('#search-text').addEventListener('input', function (e) {
   filters.searchText = e.target.value
   renderNotes(notes,filters)
 })
 
-document.querySelector('#name-form').addEventListener('submit' , function (e) {
-  e.preventDefault()
-  console.log(e.target.elements.firstName.value)
-  e.target.elements.firstName.value = ''
+document.querySelector('#filter-by').addEventListener('change', function (e) {
+  console.log(e.target.value)
 })
-
-
-
-
-
-
-
-// // const p = document.querySelector('p')
-// // p.remove()
-
-// // Query all and remove
-
-// const ps = document.querySelectorAll('p')
-// // Removes all P tags
-// // ps.forEach(function (p) {
-// //   p.remove()
-// // })
-
-// // Cobsole logs all P tags
-// ps.forEach(function (p) {
-//   console.log(p.textContent)
-// })
-// //  prints to screen
-// ps.forEach(function (p) {
-//   p.textContent = '*******'
-// })
-
-// // Add a new element
-// const newParagraph = document.createElement('p')
-// newParagraph.textContent = 'This is a new element from JavaScript'
-// document.querySelector('body').appendChild(newParagraph)
