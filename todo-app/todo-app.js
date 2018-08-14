@@ -29,6 +29,7 @@ document.querySelector('#add-todo').addEventListener('click', function (e) {
   console.log('Im adding a todo')
 })
 
+// Listen for todo text change
 document.querySelector('#todo').addEventListener('input', function (e) {
 console.log(e.target.value)
 })
