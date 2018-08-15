@@ -1,48 +1,22 @@
 // DOM - Document Object Model
 
-const notes = [{
-  title: 'My next trip',
-  body: 'I would like to go to Spain',
- }, {
-  title: 'Habbits to work on',
-  body: 'Exercise. Eating a bit better',
- }, {
-  title: 'Office Modification',
-  body: 'Get new computer'
- }]
+const notes = getSavedNotes()
 
 const filters = {
   searchText: ''
-}
-// Create
-// localStorage.setItem('location', 'Morehead')
-
-// // Read
-// console.log(localStorage.getItem('location'))
-
-// // Delete
-// localStorage.removeItem('location')
-
-localStorage.clear()
-
-const renderNotes = function (notes, filters) {
-    const filteredNotes = notes.filter(function (note) {
-      return note.title.toLowerCase().includes(filters.searchText.toLowerCase())
-    })
-    
-    document.querySelector('#notes').innerHTML = ''
-
-    filteredNotes.forEach(function (note) {
-      const noteEl = document.createElement('p')
-      noteEl.textContent = note.title
-      document.querySelector('#notes').appendChild(noteEl)
-    })
 }
 
 renderNotes(notes, filters)
 
 document.querySelector('#create-note').addEventListener('click', function (e) {
-  e.target.textContent = "Button was clicked"
+ notes.push({
+   title: '',
+   body: ''
+ })
+//  save notes to local storage
+ saveNotes(notes)
+ 
+ renderNotes(notes, filters)
 })
 
 document.querySelector('#search-text').addEventListener('input', function (e) {
